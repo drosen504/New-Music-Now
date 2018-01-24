@@ -20,10 +20,7 @@ const authEndpoint = 'https://accounts.spotify.com/authorize';
 
 // Replace with your app's client ID, redirect URI and desired scopes
 const clientId = '5f795f8bb8c14d94bafa6dcd2ed3038b';
-const redirectUri = 'http://localhost:8888/auth ';
-const scopes = [
-  'user-top-read'
-];
+const redirectUri = 'http://localhost:8888/auth';
 
 // If there is no token, redirect to Spotify authorization
 if (!_token) {
