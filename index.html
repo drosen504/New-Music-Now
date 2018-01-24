@@ -12,25 +12,42 @@
 </head>
 <body class="container">
     <h1 role="presentation" class="page-title">New Music Now!</h1>
+    <h3>The Quick and Easy Way to Find Something New to Listen to</h3>
     <main role="main">
-        <div id="selection-view">
-            <h2>Please enter the name of a band you like</h2>
+
+        <section id="landing-view">
+            <h2>Logging in to Spotify is required to utilize this service.</h2><br>
+            <button type="submit">Login</button>
+        </section>
+
+        <section id="selection-view">
+            <h2>Give me the name of an artist/band you like</h2>
             <label for="band"><form action="#" class="js-artist-search">
                     <input type="text" id="band" class="js-query">
                     <button type="submit">New Music Please!</button>
                   </form>
             </label>
-        </div>
-        <div id="song-view">
+        </section>
+
+        <section id="song-view">
             <iframe id="play-widget" src="https://open.spotify.com/embed?uri=spotify:track:5JunxkcjfCYcY7xJ29tLai"
             frameborder="0" allowtransparency="true"></iframe>
         
-        <form id="feedback">
-            <p>Do you like what you heard?</p> <!-- change to appropriate form element -->
-            <button>Yes</button>
-            <button>Not really</button>
-        </div>    
-    </form>
+            <form id="feedback">
+                <p>Do you like what you heard?</p> <!-- change to appropriate form element -->
+                <button>Yes</button>
+                <button>Not really</button>
+            </section>
+            </form>
+        <section id="artist-view">
+            <!--
+            -Artist name
+            -Bio
+            -Top tracks
+            -Related artists -->
+        </section>
+        
+    
     </main>
 </body>
 </html>
