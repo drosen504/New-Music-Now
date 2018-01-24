@@ -10,7 +10,27 @@
     <script src="app.js"></script>
 
 </head>
-<body>
-    
+<body class="container">
+    <h1 role="presentation" class="page-title">New Music Now!</h1>
+    <main role="main">
+        <div id="selection-view">
+            <h2>Please enter the name of a band you like</h2>
+            <label for="band"><form action="#" class="js-artist-search">
+                    <input type="text" id="band" class="js-query">
+                    <button type="submit">New Music Please!</button>
+                  </form>
+            </label>
+        </div>
+        <div id="song-view">
+            <iframe id="play-widget" src="https://open.spotify.com/embed?uri=spotify:track:5JunxkcjfCYcY7xJ29tLai"
+            frameborder="0" allowtransparency="true"></iframe>
+        
+        <form id="feedback">
+            <p>Do you like what you heard?</p> <!-- change to appropriate form element -->
+            <button>Yes</button>
+            <button>Not really</button>
+        </div>    
+    </form>
+    </main>
 </body>
 </html>
