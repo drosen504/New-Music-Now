@@ -18,9 +18,8 @@ window.location.hash = '';
 let _token = hash.access_token;
 console.log(`token is ${_token}`);
 
+//auth related variables
 const authEndpoint = 'https://accounts.spotify.com/authorize';
-
-// Replace with your app's client ID, redirect URI and desired scopes
 const clientId = '5f795f8bb8c14d94bafa6dcd2ed3038b';
 const redirectUri = 'http://localhost:8888/index';
 
@@ -43,6 +42,17 @@ const redirectUri = 'http://localhost:8888/index';
 //     });
 //   }
 // });
+
+function getArtistDataFromApi(endpoint, query = {}) {
+  const url = new URL(`https://api.spotify.com/v1/${endpoint}`);
+  const headers = new Headers();
+  headers.set('Authorization', `Bearer ${_token}`);
+  headers.set('Content-Type', 'application/json');
+  const requestObject = {
+    headers
+  };
+  console.log(url);
+}
 
 function watchSubmit() {
   $('.js-artist-search').submit(event => {
