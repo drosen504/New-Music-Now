@@ -5,7 +5,6 @@ const hash = window.location.hash
   .substring(1)
   .split('&')
   .reduce(function (initial, item) {
-    console.log('hash set');
     if (item) {
       var parts = item.split('=');
       initial[parts[0]] = decodeURIComponent(parts[1]);
@@ -23,10 +22,8 @@ const authEndpoint = 'https://accounts.spotify.com/authorize';
 const clientId = '5f795f8bb8c14d94bafa6dcd2ed3038b';
 const redirectUri = 'http://localhost:8888/index';
 
-// If there is no token, redirect to Spotify authorization
-// if (!_token) {
-//   window.location = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&show_dialog=true`;
-// }
+//API call
+const baseUrl: 'https://api.spotify.com/v1/'
 
 // Make a call using the token
 // $.ajax({
@@ -47,7 +44,7 @@ function getArtistDataFromApi(endpoint, query = {}) {
   const url = new URL(`https://api.spotify.com/v1/${endpoint}`);
   const headers = new Headers();
   headers.set('Authorization', `Bearer ${_token}`);
-  headers.set('Content-Type', 'application/json');
+//   headers.set('Content-Type', 'application/json');
   const requestObject = {
     headers
   };
@@ -65,9 +62,11 @@ function watchSubmit() {
       const query = queryBand.val();
       console.log(`You searched for ${query}`);  
       queryBand.val('');
-    // getDataFromApi(query, displayYTSearchData);
+    // getDataFromApi(query, dataProcessorFunction);
     }
   });
 }
+
+// function fetchTrackId
 
 $(watchSubmit);
