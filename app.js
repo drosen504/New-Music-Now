@@ -23,7 +23,7 @@ const clientId = '5f795f8bb8c14d94bafa6dcd2ed3038b';
 const redirectUri = 'http://localhost:8888/index';
 
 //API call
-const baseUrl: 'https://api.spotify.com/v1/'
+// const baseUrl: 'https://api.spotify.com/v1/';
 
 // Make a call using the token
 // $.ajax({
@@ -40,15 +40,13 @@ const baseUrl: 'https://api.spotify.com/v1/'
 //   }
 // });
 
-function getArtistDataFromApi(endpoint, query = {}) {
-  const url = new URL(`https://api.spotify.com/v1/${endpoint}`);
+const getArtistDataFromApi = function(query, endpoint, callback) {
+  const url = new URL(`https://api.spotify.com/v1/${endpoint}/`);
   const headers = new Headers();
   headers.set('Authorization', `Bearer ${_token}`);
-//   headers.set('Content-Type', 'application/json');
-  const requestObject = {
-    headers
-  };
-  console.log(url);
+  //   headers.set('Content-Type', 'application/json');
+//   $.getJSON(url, headers, callback);
+  console.log(getArtistDataFromApi);
 }
 
 function watchSubmit() {
@@ -62,11 +60,13 @@ function watchSubmit() {
       const query = queryBand.val();
       console.log(`You searched for ${query}`);  
       queryBand.val('');
-    // getDataFromApi(query, dataProcessorFunction);
+      getArtistDataFromApi(query, 'search', fetchTrackId); //need to add third argument to trigger callback
     }
   });
 }
 
-// function fetchTrackId
+function fetchTrackId(data) {
+  const results = data.items.map(data);
+}
 
 $(watchSubmit);
