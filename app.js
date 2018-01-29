@@ -42,12 +42,12 @@ const redirectUri = 'http://localhost:8888/index';
 
 const getArtistDataFromApi = function(query, endpoint, callback) {
   const url = new URL(`https://api.spotify.com/v1/${endpoint}/`);
-  const headers = new Headers();
-  headers.set('Authorization', `Bearer ${_token}`);
+  let headers = {};
+  headers = `Authorization=Bearer${_token}`;
+  console.log(`headers is ${headers}`);
   //   headers.set('Content-Type', 'application/json');
-//   $.getJSON(url, headers, callback);
-  console.log(getArtistDataFromApi);
-}
+  $.getJSON(url, headers, callback);
+};
 
 function watchSubmit() {
   $('.js-artist-search').submit(event => {
