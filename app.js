@@ -39,6 +39,7 @@ const redirectUri = 'http://localhost:8888/index';
 
 const getArtistDataFromApi = function (endpoint, query = {}) {
   const url = new URL(`https://api.spotify.com/v1/${endpoint}`);
+  console.log(`API call URL is ${url}`)
   const headers = new Headers();
   headers.set('Authorization', `Bearer ${_token}`);
   headers.set('Content-Type', 'application/json');
@@ -67,9 +68,12 @@ const getArtist = function (name) {
     .then(data => {
       artist = data.artists.items[0];
       console.log(`artist is ${artist.name}`);
-      return getArtistDataFromApi(`artists/${artist.id}`);
+      console.log(artist);
+      return getArtistDataFromApi(`artists/${artist.id}/related-artists`);
     }) 
-    .then()
+    .then(data => {
+      console.log(`related artist data is ${data.artists[2].id}`);
+    })
         
    
 
@@ -88,7 +92,7 @@ function watchSubmit() {
       const query = queryBand.val();
       console.log(`You searched for ${query}`);  
       queryBand.val('');
-      getArtist(query); //need to add third argument to trigger callback
+      getArtist(query);
     }
   });
 }
