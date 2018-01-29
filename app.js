@@ -25,32 +25,57 @@ const redirectUri = 'http://localhost:8888/index';
 //API call
 // const baseUrl: 'https://api.spotify.com/v1/';
 
-// Make a call using the token
-// $.ajax({
-//   url: 'https://api.spotify.com/v1/me/top/artists',
-//   type: 'GET',
-//   beforeSend: function(xhr){
-//     xhr.setRequestHeader('Authorization', 'Bearer ' + _token );},
-//   success: function(data) { 
-//     // Do something with the returned data
-//     data.items.map(function(artist) {
-//       let item = $('<li>' + artist.name + '</li>');
-//       item.appendTo($('#top-artists'));
-//     });
-//   }
-// });
+// const getArtistDataFromApi = function(query, endpoint, callback) {
+//   const url = new URL(`https://api.spotify.com/v1/${endpoint}/`);
+//   let headers = {
+//     q: query,
+//     Authorization: `Bearer${_token}`
+//   };
+//   // headers = `Authorization=Bearer${_token}`;
+//   console.log(`headers is ${headers}`);
+//   //   headers.set('Content-Type', 'application/json');
+//   $.getJSON(url, headers, callback);
+// };
 
-const getArtistDataFromApi = function(query, endpoint, callback) {
-  const url = new URL(`https://api.spotify.com/v1/${endpoint}/`);
-  let headers = {
-    q: query,
-    Authorization: `Bearer${_token}`
+const getArtistDataFromApi = function (endpoint, query = {}) {
+  const url = new URL(`https://api.spotify.com/v1/${endpoint}`);
+  const headers = new Headers();
+  headers.set('Authorization', `Bearer ${_token}`);
+  headers.set('Content-Type', 'application/json');
+  const requestObject = {
+    headers
   };
-  // headers = `Authorization=Bearer${_token}`;
-  console.log(`headers is ${headers}`);
-  //   headers.set('Content-Type', 'application/json');
-  $.getJSON(url, headers, callback);
+
+  Object.keys(query).forEach(key => url.searchParams.append(key, query[key]));
+  return fetch(url, requestObject).then(function (response) {
+    if (!response.ok) {
+      return Promise.reject(response.statusText);
+    }
+    return response.json();
+        
+  });
 };
+
+let artist;
+
+const getArtist = function (name) {
+  return getArtistDataFromApi('search', {
+    q: name,
+    limit: 1,
+    type: 'artist'
+  })
+    .then(data => {
+      artist = data.artists.items[0];
+      console.log(`artist is ${artist}`);
+      return getArtistDataFromApi(`artists/${artist.id}`);
+    }) 
+    .then()
+        
+   
+
+    .catch(error => console.log(error));
+};
+
 
 function watchSubmit() {
   $('.js-artist-search').submit(event => {
@@ -63,7 +88,7 @@ function watchSubmit() {
       const query = queryBand.val();
       console.log(`You searched for ${query}`);  
       queryBand.val('');
-      getArtistDataFromApi(query, 'search', fetchTrackId); //need to add third argument to trigger callback
+      getArtist('search'); //need to add third argument to trigger callback
     }
   });
 }
