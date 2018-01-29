@@ -66,7 +66,7 @@ const getArtist = function (name) {
   })
     .then(data => {
       artist = data.artists.items[0];
-      console.log(`artist is ${artist}`);
+      console.log(`artist is ${artist.name}`);
       return getArtistDataFromApi(`artists/${artist.id}`);
     }) 
     .then()
@@ -88,7 +88,7 @@ function watchSubmit() {
       const query = queryBand.val();
       console.log(`You searched for ${query}`);  
       queryBand.val('');
-      getArtist('search'); //need to add third argument to trigger callback
+      getArtist(query); //need to add third argument to trigger callback
     }
   });
 }
