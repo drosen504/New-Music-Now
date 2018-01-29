@@ -72,7 +72,11 @@ const getArtist = function (name) {
       return getArtistDataFromApi(`artists/${artist.id}/related-artists`);
     }) 
     .then(data => {
-      console.log(`related artist data is ${data.artists[2].id}`);
+      let relatedArtistId = data.artists[2].id;
+      return getArtistDataFromApi(`artist/${data.artists[2].id}/top-tracks?country=US`);
+    })
+    .then(tracks => {
+      console.log();
     })
         
    
