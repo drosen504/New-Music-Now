@@ -1,4 +1,5 @@
 'use strict';
+/* global $ */
 
 // Get the hash of the url
 const hash = window.location.hash
@@ -21,21 +22,6 @@ console.log(`token is ${_token}`);
 const authEndpoint = 'https://accounts.spotify.com/authorize';
 const clientId = '5f795f8bb8c14d94bafa6dcd2ed3038b';
 const redirectUri = 'http://localhost:8888/index';
-
-//API call
-// const baseUrl: 'https://api.spotify.com/v1/';
-
-// const getArtistDataFromApi = function(query, endpoint, callback) {
-//   const url = new URL(`https://api.spotify.com/v1/${endpoint}/`);
-//   let headers = {
-//     q: query,
-//     Authorization: `Bearer${_token}`
-//   };
-//   // headers = `Authorization=Bearer${_token}`;
-//   console.log(`headers is ${headers}`);
-//   //   headers.set('Content-Type', 'application/json');
-//   $.getJSON(url, headers, callback);
-// };
 
 const getArtistDataFromApi = function (endpoint, query = {}) {
   const url = new URL(`https://api.spotify.com/v1/${endpoint}`);
@@ -73,7 +59,7 @@ const getArtist = function (name) {
       return getArtistDataFromApi(`artists/${artist.id}/related-artists`);
     }) 
     .then(data => {
-      let relatedArtistId = data.artists[2].id;
+      relatedArtistId = data.artists[2].id;
       return getArtistDataFromApi(`artists/${data.artists[2].id}/top-tracks?country=US`);
     })
     .then(data => {
@@ -81,16 +67,20 @@ const getArtist = function (name) {
       let suggestedTrackId = data.tracks[0].id;
       handlePlayerWidget(suggestedTrackId);
     })
-        
-   
-
     .catch(error => console.log(error));
 };
 
 function handlePlayerWidget(trackId) {
-  console.log('track ID feeding into widget function:' + trackId);
   $('#song-view').html(`<iframe id="play-widget" src="https://open.spotify.com/embed?uri=spotify:track:${trackId}"
   frameborder="0" allowtransparency="true"></iframe>`);
+}
+
+function handleSpotifyLogin() {
+  $('#js-login-button').click(event => {
+    console.log('login button clicked');
+    event.preventDefault();
+    window.location = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&show_dialog=true`;
+  });
 }
 
 function watchSubmit() {
@@ -114,3 +104,4 @@ function fetchTrackId(data) {
 }
 
 $(watchSubmit);
+$(handleSpotifyLogin);
