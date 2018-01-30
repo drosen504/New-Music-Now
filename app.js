@@ -39,7 +39,7 @@ const redirectUri = 'http://localhost:8888/index';
 
 const getArtistDataFromApi = function (endpoint, query = {}) {
   const url = new URL(`https://api.spotify.com/v1/${endpoint}`);
-  console.log(`API call URL is ${url}`)
+  console.log(`base API call URL is ${url}`);
   const headers = new Headers();
   headers.set('Authorization', `Bearer ${_token}`);
   headers.set('Content-Type', 'application/json');
@@ -73,10 +73,11 @@ const getArtist = function (name) {
     }) 
     .then(data => {
       let relatedArtistId = data.artists[2].id;
-      return getArtistDataFromApi(`artist/${data.artists[2].id}/top-tracks?country=US`);
+      return getArtistDataFromApi(`artists/${data.artists[2].id}/top-tracks?country=US`);
     })
-    .then(tracks => {
-      console.log();
+    .then(data => {
+      console.log(`the id of track is ${data.tracks[0].id}`);
+      console.log(`the title of of track is ${data.tracks[0].name}`);
     })
         
    
