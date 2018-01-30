@@ -63,7 +63,7 @@ const getArtist = function (name) {
       return getArtistDataFromApi(`artists/${data.artists[2].id}/top-tracks?country=US`);
     })
     .then(data => {
-      console.log(`the id of ${data.tracks[0].name} is ${data.tracks[0].id}`);
+      console.log(`the trackID of ${data.tracks[0].name} is ${data.tracks[0].id}`);
       let suggestedTrackId = data.tracks[0].id;
       handlePlayerWidget(suggestedTrackId);
     })
@@ -95,13 +95,25 @@ function watchSubmit() {
       console.log(`You searched for ${query}`);  
       queryBand.val('');
       getArtist(query);
+      $('#selection-view').hide();
+      $('#feedback').show();
     }
   });
 }
 
-function fetchTrackId(data) {
-  const results = data.items.map(data);
+function initializePage() {
+  if (!_token) {
+    $('#selection-view').hide();
+    $('#song-view').hide();
+    $('#feedback').hide();
+    $('#artist-view').hide();
+  } else {
+    $('#landing-view').hide();
+    $('#feedback').hide();
+    $('#artist-view').hide();
+  }
 }
 
+$(initializePage);
 $(watchSubmit);
 $(handleSpotifyLogin);
