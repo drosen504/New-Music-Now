@@ -42,11 +42,11 @@ const getArtistDataFromApi = function (endpoint, query = {}) {
         
   });
 };
-
+ 
 let relatedArtistId;
 let artist;
 
-const getArtist = function (name) {
+const initialArtistSearch = function (name) {
   return getArtistDataFromApi('search', {
     q: name,
     limit: 1,
@@ -94,14 +94,29 @@ function watchSubmit() {
       const query = queryBand.val();
       console.log(`You searched for ${query}`);  
       queryBand.val('');
-      getArtist(query);
+      initialArtistSearch(query);
       $('#selection-view').hide();
       $('#feedback').show();
+      handleNoFeedback();
+      handleYesFeedback();
     }
   });
 }
 
+function handleNoFeedback() {
+  $('#no-button').click(event => {
+    console.log('No button clicked');
+  });
+}
+
+function handleYesFeedback() {
+  $('#yes-button').click(event => {
+    console.log('Yes button clicked');
+  });
+}
+
 function initializePage() {
+  console.log('Initial View Loaded');
   if (!_token) {
     $('#selection-view').hide();
     $('#song-view').hide();
@@ -117,3 +132,4 @@ function initializePage() {
 $(initializePage);
 $(watchSubmit);
 $(handleSpotifyLogin);
+
