@@ -57,6 +57,7 @@ const getArtistDataFromApi = function (endpoint, query = {}) {
   });
 };
 
+let relatedArtistId;
 let artist;
 
 const getArtist = function (name) {
@@ -76,8 +77,9 @@ const getArtist = function (name) {
       return getArtistDataFromApi(`artists/${data.artists[2].id}/top-tracks?country=US`);
     })
     .then(data => {
-      console.log(`the id of track is ${data.tracks[0].id}`);
-      console.log(`the title of of track is ${data.tracks[0].name}`);
+      console.log(`the id of ${data.tracks[0].name} is ${data.tracks[0].id}`);
+      let suggestedTrackId = data.tracks[0].id;
+      handlePlayerWidget(suggestedTrackId);
     })
         
    
@@ -85,6 +87,11 @@ const getArtist = function (name) {
     .catch(error => console.log(error));
 };
 
+function handlePlayerWidget(trackId) {
+  console.log('track ID feeding into widget function:' + trackId);
+  $('#song-view').html(`<iframe id="play-widget" src="https://open.spotify.com/embed?uri=spotify:track:${trackId}"
+  frameborder="0" allowtransparency="true"></iframe>`);
+}
 
 function watchSubmit() {
   $('.js-artist-search').submit(event => {
