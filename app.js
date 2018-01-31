@@ -56,30 +56,21 @@ const initialArtistSearch = function (name) {
   })
     .then(data => {
       artist = data.artists.items[0];
-      console.log(`artist is ${artist.name}`);
       console.log(artist);
       return getArtistDataFromApi(`artists/${artist.id}/related-artists`);
     }) 
     .then(data => {
-      relatedArtistId = data.artists[randomInteger(10)].id;
+      let randomArtistIndexNumber = randomInteger(10)
+      relatedArtistId = data.artists[randomArtistIndexNumber].id;
       return getArtistDataFromApi(`artists/${relatedArtistId}/top-tracks?country=US`);
     })
     .then(data => {
       let suggestedTrackId = data.tracks[randomInteger(5)].id;
-      handlePlayerWidget(suggestedTrackId);
+      generator.handlePlayerWidget(suggestedTrackId);
     })
     .catch(error => console.log(error));
 };
 
-// subsequent API call for retry
-// const retryArtistSearch = function (name) {
-//   return getArtistDataFromApi('search')
-// };
-
-function handlePlayerWidget(trackId) {
-  $('#song-view').html(`<iframe id="play-widget" src="https://open.spotify.com/embed?uri=spotify:track:${trackId}"
-  frameborder="0" allowtransparency="true"></iframe>`);
-}
 
 function handleSpotifyLogin() {
   $('#js-login-button').click(event => {
@@ -118,7 +109,7 @@ function handleNoFeedback() {
 
 function handleYesFeedback() {
   $('#yes-button').click(event => {
-    console.log('Yes button clicked');
+    console.log(relatedArtistId);
   });
 }
 
