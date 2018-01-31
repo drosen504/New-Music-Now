@@ -1,7 +1,7 @@
 'use strict';
 /* global $ */
 
-// Get the hash of the url
+//decode hash to extract token
 const hash = window.location.hash
   .substring(1)
   .split('&')
@@ -14,7 +14,7 @@ const hash = window.location.hash
   }, {});
 window.location.hash = '';
  
-// Set token
+// Set token. grab from URI hash
 let _token = hash.access_token;
 console.log(`token is ${_token}`);
 
@@ -23,6 +23,7 @@ const authEndpoint = 'https://accounts.spotify.com/authorize';
 const clientId = '5f795f8bb8c14d94bafa6dcd2ed3038b';
 const redirectUri = 'http://localhost:8888/index';
 
+//API call
 const getArtistDataFromApi = function (endpoint, query = {}) {
   const url = new URL(`https://api.spotify.com/v1/${endpoint}`);
   console.log(`base API call URL is ${url}`);
@@ -59,16 +60,20 @@ const initialArtistSearch = function (name) {
       return getArtistDataFromApi(`artists/${artist.id}/related-artists`);
     }) 
     .then(data => {
-      relatedArtistId = data.artists[2].id;
-      return getArtistDataFromApi(`artists/${data.artists[2].id}/top-tracks?country=US`);
+      relatedArtistId = data.artists[randomInteger(5)].id;
+      return getArtistDataFromApi(`artists/${relatedArtistId}/top-tracks?country=US`);
     })
     .then(data => {
-      console.log(`the trackID of ${data.tracks[0].name} is ${data.tracks[0].id}`);
-      let suggestedTrackId = data.tracks[0].id;
+      let suggestedTrackId = data.tracks[randomInteger(5)].id;
       handlePlayerWidget(suggestedTrackId);
     })
     .catch(error => console.log(error));
 };
+
+// subsequent API call for retry
+// const retryArtistSearch = function (name) {
+//   return getArtistDataFromApi('search')
+// };
 
 function handlePlayerWidget(trackId) {
   $('#song-view').html(`<iframe id="play-widget" src="https://open.spotify.com/embed?uri=spotify:track:${trackId}"
@@ -106,6 +111,7 @@ function watchSubmit() {
 function handleNoFeedback() {
   $('#no-button').click(event => {
     console.log('No button clicked');
+    // retryArtistSearch(query);
   });
 }
 
@@ -127,6 +133,11 @@ function initializePage() {
     $('#feedback').hide();
     $('#artist-view').hide();
   }
+}
+
+//random number function
+function randomInteger(max) {
+  return Math.floor(Math.random() * Math.floor(max));
 }
 
 $(initializePage);
