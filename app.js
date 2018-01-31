@@ -46,6 +46,7 @@ const getArtistDataFromApi = function (endpoint, query = {}) {
  
 let relatedArtistId;
 let artist;
+let query;
 
 const initialArtistSearch = function (name) {
   return getArtistDataFromApi('search', {
@@ -60,7 +61,7 @@ const initialArtistSearch = function (name) {
       return getArtistDataFromApi(`artists/${artist.id}/related-artists`);
     }) 
     .then(data => {
-      relatedArtistId = data.artists[randomInteger(5)].id;
+      relatedArtistId = data.artists[randomInteger(10)].id;
       return getArtistDataFromApi(`artists/${relatedArtistId}/top-tracks?country=US`);
     })
     .then(data => {
@@ -96,7 +97,7 @@ function watchSubmit() {
       window.location = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&show_dialog=true`;
     } else {
       const queryBand = $(event.currentTarget).find('.js-query');
-      const query = queryBand.val();
+      query = queryBand.val();
       console.log(`You searched for ${query}`);  
       queryBand.val('');
       initialArtistSearch(query);
@@ -111,7 +112,7 @@ function watchSubmit() {
 function handleNoFeedback() {
   $('#no-button').click(event => {
     console.log('No button clicked');
-    // retryArtistSearch(query);
+    initialArtistSearch(query);
   });
 }
 
@@ -135,7 +136,7 @@ function initializePage() {
   }
 }
 
-//random number function
+//random number function. used in API call to randomize artist/track played
 function randomInteger(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
