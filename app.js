@@ -3,25 +3,25 @@
 
 //decode hash to extract token
 
-const hash = window.location.hash
-  .substring(1)
-  .split('&')
-  .reduce(function (initial, item) {
-    if (item) {
-      var parts = item.split('=');
-      initial[parts[0]] = decodeURIComponent(parts[1]);
-    }
-    return initial;
-  }, {});
+function decodeURL() {  
+  const hash = window.location.hash
+    .substring(1)
+    .split('&')
+    .reduce(function (initial, item) {
+      if (item) {
+        var parts = item.split('=');
+        initial[parts[0]] = decodeURIComponent(parts[1]);
+      }
+      return initial;
+    }, {});
+  return hash;
+}
+const hash = decodeURL();
 window.location.hash = '';
  
 // Set token. grab from URI hash
 let _token = hash.access_token;
 console.log(`token is ${_token}`);
-
-//auth related variables
-
-
 
 //API call
 const getArtistDataFromApi = function (endpoint, query = {}) {
@@ -60,7 +60,7 @@ const initialArtistSearch = function (name) {
       return getArtistDataFromApi(`artists/${artist.id}/related-artists`);
     }) 
     .then(data => {
-      let randomArtistIndexNumber = randomInteger(10)
+      let randomArtistIndexNumber = randomInteger(10);
       relatedArtistId = data.artists[randomArtistIndexNumber].id;
       return getArtistDataFromApi(`artists/${relatedArtistId}/top-tracks?country=US`);
     })
