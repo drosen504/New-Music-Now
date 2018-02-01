@@ -97,8 +97,10 @@ function watchSubmit() {
       initialArtistSearch(query);
       $('#selection-view').hide();
       $('#feedback').show();
+      $('#restart-nav').show();
       handleNoFeedback();
       handleYesFeedback();
+      handleRestartButton();
     }
   });
 }
@@ -114,8 +116,15 @@ function handleYesFeedback() {
   $('#yes-button').click(event => {
     console.log(relatedArtistId);
     $('#artist-view').show();
+    $('#feedback').hide();
     generator.postArtistInfo(relatedArtistData);
 
+  });
+}
+
+function handleRestartButton() {
+  $('#restart-button').click(event => {
+    console.log('restarted!');
   });
 }
 

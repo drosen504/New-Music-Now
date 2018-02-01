@@ -10,7 +10,8 @@ const generator = function() {
     postArtistInfo: function(relatedArtistData) {
       $('#artist-view').html(`<h2>Glad you enjoyed it!</h2>
       <p>You're listening to ${relatedArtistData.name}</p><br>
-      <a href="${relatedArtistData.external_urls.spotify}">Check them out on Spotify!</a>`);
+      <a href="${relatedArtistData.external_urls.spotify}" target="_blank">Check them out on Spotify!</a>
+      <p>or</p>`);
     }, 
   
     initializePage: function() {
@@ -20,10 +21,12 @@ const generator = function() {
         $('#song-view').hide();
         $('#feedback').hide();
         $('#artist-view').hide();
+        $('#restart-nav').hide();
       } else {
         $('#landing-view').hide();
         $('#feedback').hide();
         $('#artist-view').hide();
+        $('#restart-nav').hide();
       }
     }
 
