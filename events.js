@@ -19,17 +19,25 @@ const events = function() {
           $('#feedback').show();
           $('#restart-nav').show();
           $('#song-view').show();
-          handleNoFeedback();
-          handleYesFeedback();
+          events.handleNoFeedback(); //why can't i use this.handleNoFeedback?
+          events.handleYesFeedback(); //why can't i use this.handleYesFeedback?
           handleRestartButton();
         }
       });
     },
-    handleYesFeedback: function() {
-
-    },
     handleNoFeedback: function() {
-
+      $('#no-button').click(event => {
+        console.log('No button clicked');
+        api.initialArtistSearch(query);
+      });
+    },
+    handleYesFeedback: function() {
+      $('#yes-button').click(event => {
+        console.log(relatedArtistId);
+        $('#artist-view').show();
+        $('#feedback').hide();
+        generator.postArtistInfo(relatedArtistData);
+      });
     },
 
   };
