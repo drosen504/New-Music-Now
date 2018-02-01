@@ -21,7 +21,7 @@ const events = function() {
           $('#song-view').show();
           events.handleNoFeedback(); //why can't i use this.handleNoFeedback?
           events.handleYesFeedback(); //why can't i use this.handleYesFeedback?
-          handleRestartButton();
+          events.handleRestartButton();
         }
       });
     },
@@ -37,6 +37,16 @@ const events = function() {
         $('#artist-view').show();
         $('#feedback').hide();
         generator.postArtistInfo(relatedArtistData);
+      });
+    },
+    handleRestartButton: function() {
+      $('#restart-button').click(event => {
+        console.log('restarted!');
+        $('#song-view').hide();
+        $('#feedback').hide();
+        $('#artist-view').hide();
+        $('#restart-nav').hide();
+        $('#selection-view').show();
       });
     },
 
