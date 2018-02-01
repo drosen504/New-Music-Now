@@ -119,26 +119,12 @@ function handleYesFeedback() {
   });
 }
 
-function initializePage() {
-  console.log('Initial View Loaded');
-  if (!_token) {
-    $('#selection-view').hide();
-    $('#song-view').hide();
-    $('#feedback').hide();
-    $('#artist-view').hide();
-  } else {
-    $('#landing-view').hide();
-    $('#feedback').hide();
-    $('#artist-view').hide();
-  }
-}
-
 //random number function. used in API call to randomize artist/track played
 function randomInteger(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-$(initializePage);
+$(generator.initializePage);
 $(watchSubmit);
 $(handleSpotifyLogin);
 

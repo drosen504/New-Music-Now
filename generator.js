@@ -9,24 +9,22 @@ const generator = function() {
     },
     postArtistInfo: function() {
       $('#artist-view').html('<p>Artist Info Placeholder</p>');
-    } 
-    
+    }, 
   
-
-  // {
-  //   initializePage: function() {
-  //     console.log('Initial View Loaded');
-  //     if (!_token) {
-  //       $('#selection-view').hide();
-  //       $('#song-view').hide();
-  //       $('#feedback').hide();
-  //       $('#artist-view').hide();
-  //     } else {
-  //       $('#landing-view').hide();
-  //       $('#feedback').hide();
-  //       $('#artist-view').hide();
-  //     }
-  //   }
+    initializePage: function() {
+      console.log('Initial View Loaded');
+      if (!_token) {
+        $('#selection-view').hide();
+        $('#song-view').hide();
+        $('#feedback').hide();
+        $('#artist-view').hide();
+      } else {
+        $('#landing-view').hide();
+        $('#feedback').hide();
+        $('#artist-view').hide();
+      }
+    }
 
   };
-}(); 
+}();
+
