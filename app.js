@@ -36,28 +36,28 @@ function handleSpotifyLogin() {
   });
 }
 
-function watchSubmit() {
-  $('.js-artist-search').submit(event => {
-    console.log('submit button clicked');
-    event.preventDefault();
-    if (!_token) {
-      window.location = `${authorization.authEndpoint}?client_id=${authorization.clientId}&redirect_uri=${authorization.redirectUri}&response_type=token&show_dialog=true`;
-    } else {
-      const queryBand = $(event.currentTarget).find('.js-query');
-      query = queryBand.val();
-      console.log(`You searched for ${query}`);  
-      queryBand.val('');
-      api.initialArtistSearch(query);
-      $('#selection-view').hide();
-      $('#feedback').show();
-      $('#restart-nav').show();
-      $('#song-view').show();
-      handleNoFeedback();
-      handleYesFeedback();
-      handleRestartButton();
-    }
-  });
-}
+// function watchSubmit() {
+//   $('.js-artist-search').submit(event => {
+//     console.log('submit button clicked');
+//     event.preventDefault();
+//     if (!_token) {
+//       window.location = `${authorization.authEndpoint}?client_id=${authorization.clientId}&redirect_uri=${authorization.redirectUri}&response_type=token&show_dialog=true`;
+//     } else {
+//       const queryBand = $(event.currentTarget).find('.js-query');
+//       query = queryBand.val();
+//       console.log(`You searched for ${query}`);  
+//       queryBand.val('');
+//       api.initialArtistSearch(query);
+//       $('#selection-view').hide();
+//       $('#feedback').show();
+//       $('#restart-nav').show();
+//       $('#song-view').show();
+//       handleNoFeedback();
+//       handleYesFeedback();
+//       handleRestartButton();
+//     }
+//   });
+// }
 
 function handleNoFeedback() {
   $('#no-button').click(event => {
@@ -88,11 +88,11 @@ function handleRestartButton() {
 }
 
 //random number function. used in API call to randomize artist/track played
-function randomInteger(max) {
-  return Math.floor(Math.random() * Math.floor(max));
-}
+// function randomInteger(max) {
+//   return Math.floor(Math.random() * Math.floor(max));
+// }
 
 $(generator.initializePage);
-$(watchSubmit);
+$(events.watchSubmit);
 $(handleSpotifyLogin);
 
