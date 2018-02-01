@@ -114,7 +114,7 @@ function handleYesFeedback() {
   $('#yes-button').click(event => {
     console.log(relatedArtistId);
     $('#artist-view').show();
-    generator.postArtistInfo();
+    generator.postArtistInfo(relatedArtistData);
 
   });
 }

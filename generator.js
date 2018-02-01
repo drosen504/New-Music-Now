@@ -7,8 +7,10 @@ const generator = function() {
       $('#song-view').html(`<iframe id="play-widget" src="https://open.spotify.com/embed?uri=spotify:track:${trackId}"
       frameborder="0" allowtransparency="true"></iframe>`);
     },
-    postArtistInfo: function() {
-      $('#artist-view').html('<p>Artist Info Placeholder</p>');
+    postArtistInfo: function(relatedArtistData) {
+      $('#artist-view').html(`<h2>Glad you enjoyed it!</h2>
+      <p>You're listening to ${relatedArtistData.name}</p><br>
+      <a href="${relatedArtistData.external_urls.spotify}">Check them out on Spotify!</a>`);
     }, 
   
     initializePage: function() {
