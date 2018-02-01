@@ -28,15 +28,15 @@ let relatedArtistData;
 let artistData;
 let query;
 
-function handleSpotifyLogin() {
-  $('#js-login-button').click(event => {
-    console.log('login button clicked');
-    event.preventDefault();
-    window.location = `${authorization.authEndpoint}?client_id=${authorization.clientId}&redirect_uri=${authorization.redirectUri}&response_type=token&show_dialog=true`;
-  });
-}
+// function handleSpotifyLogin() {
+//   $('#js-login-button').click(event => {
+//     console.log('login button clicked');
+//     event.preventDefault();
+//     window.location = `${authorization.authEndpoint}?client_id=${authorization.clientId}&redirect_uri=${authorization.redirectUri}&response_type=token&show_dialog=true`;
+//   });
+// }
 
 $(generator.initializePage);
 $(events.watchSubmit);
-$(handleSpotifyLogin);
+$(events.handleSpotifyLogin);
 

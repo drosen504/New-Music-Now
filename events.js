@@ -3,6 +3,13 @@
 
 const events = function() {
   return {
+    handleSpotifyLogin: function() {
+      $('#js-login-button').click(event => {
+        console.log('login button clicked');
+        event.preventDefault();
+        window.location = `${authorization.authEndpoint}?client_id=${authorization.clientId}&redirect_uri=${authorization.redirectUri}&response_type=token&show_dialog=true`;
+      });
+    },  
     watchSubmit: function() {
       $('.js-artist-search').submit(event => {
         console.log('submit button clicked');
