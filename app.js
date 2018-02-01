@@ -24,25 +24,25 @@ let _token = hash.access_token;
 console.log(`token is ${_token}`);
 
 //API call
-const getArtistDataFromApi = function (endpoint, query = {}) {
-  const url = new URL(`https://api.spotify.com/v1/${endpoint}`);
-  console.log(`base API call URL is ${url}`);
-  const headers = new Headers();
-  headers.set('Authorization', `Bearer ${_token}`);
-  headers.set('Content-Type', 'application/json');
-  const requestObject = {
-    headers
-  };
+// const getArtistDataFromApi = function (endpoint, query = {}) {
+//   const url = new URL(`https://api.spotify.com/v1/${endpoint}`);
+//   console.log(`base API call URL is ${url}`);
+//   const headers = new Headers();
+//   headers.set('Authorization', `Bearer ${_token}`);
+//   headers.set('Content-Type', 'application/json');
+//   const requestObject = {
+//     headers
+//   };
 
-  Object.keys(query).forEach(key => url.searchParams.append(key, query[key]));
-  return fetch(url, requestObject).then(function (response) {
-    if (!response.ok) {
-      return Promise.reject(response.statusText);
-    }
-    return response.json();
+//   Object.keys(query).forEach(key => url.searchParams.append(key, query[key]));
+//   return fetch(url, requestObject).then(function (response) {
+//     if (!response.ok) {
+//       return Promise.reject(response.statusText);
+//     }
+//     return response.json();
         
-  });
-};
+//   });
+// };
  
 let relatedArtistId;
 let relatedArtistData;
@@ -50,7 +50,7 @@ let artistData;
 let query;
 
 const initialArtistSearch = function (name) {
-  return getArtistDataFromApi('search', {
+  return api.getArtistDataFromApi('search', {
     q: name,
     limit: 1,
     type: 'artist'
@@ -58,14 +58,14 @@ const initialArtistSearch = function (name) {
     .then(data => {
       artistData = data.artists.items[0];
       console.log(artistData);
-      return getArtistDataFromApi(`artists/${artistData.id}/related-artists`);
+      return api.getArtistDataFromApi(`artists/${artistData.id}/related-artists`);
     }) 
     .then(data => {
       let randomArtistIndexNumber = randomInteger(10);
       relatedArtistId = data.artists[randomArtistIndexNumber].id;
       relatedArtistData = data.artists[randomArtistIndexNumber];
       console.log(relatedArtistData);
-      return getArtistDataFromApi(`artists/${relatedArtistId}/top-tracks?country=US`);
+      return api.getArtistDataFromApi(`artists/${relatedArtistId}/top-tracks?country=US`);
     })
     .then(data => {
       let suggestedTrackId = data.tracks[randomInteger(5)].id;
