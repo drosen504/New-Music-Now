@@ -45,7 +45,8 @@ const getArtistDataFromApi = function (endpoint, query = {}) {
 };
  
 let relatedArtistId;
-let artist;
+let relatedArtistData;
+let artistData;
 let query;
 
 const initialArtistSearch = function (name) {
@@ -55,13 +56,15 @@ const initialArtistSearch = function (name) {
     type: 'artist'
   })
     .then(data => {
-      artist = data.artists.items[0];
-      console.log(artist);
-      return getArtistDataFromApi(`artists/${artist.id}/related-artists`);
+      artistData = data.artists.items[0];
+      console.log(artistData);
+      return getArtistDataFromApi(`artists/${artistData.id}/related-artists`);
     }) 
     .then(data => {
       let randomArtistIndexNumber = randomInteger(10);
       relatedArtistId = data.artists[randomArtistIndexNumber].id;
+      relatedArtistData = data.artists[randomArtistIndexNumber];
+      console.log(relatedArtistData);
       return getArtistDataFromApi(`artists/${relatedArtistId}/top-tracks?country=US`);
     })
     .then(data => {
