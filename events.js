@@ -34,7 +34,7 @@ const events = function() {
     },
     handleNoFeedback: function() {
       $('#no-button').click(event => {
-        console.log('No button clicked');
+        console.log(`query is currently ${query}`);
         api.initialArtistSearch(query);
       });
     },
@@ -48,6 +48,7 @@ const events = function() {
     },
     handleRestartButton: function() {
       $('#restart-button').click(event => {
+        event.preventDefault();
         console.log('restarted!');
         $('#song-view').hide();
         $('#feedback').hide();
