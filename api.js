@@ -22,6 +22,29 @@ const api = function() {
               
       });
     },
-
+    initialArtistSearch: function (name) {
+      return api.getArtistDataFromApi('search', {
+        q: name,
+        limit: 1,
+        type: 'artist'
+      })
+        .then(data => {
+          artistData = data.artists.items[0];
+          console.log(artistData);
+          return api.getArtistDataFromApi(`artists/${artistData.id}/related-artists`);
+        }) 
+        .then(data => {
+          let randomArtistIndexNumber = randomInteger(10);
+          relatedArtistId = data.artists[randomArtistIndexNumber].id;
+          relatedArtistData = data.artists[randomArtistIndexNumber];
+          console.log(relatedArtistData);
+          return api.getArtistDataFromApi(`artists/${relatedArtistId}/top-tracks?country=US`);
+        })
+        .then(data => {
+          let suggestedTrackId = data.tracks[randomInteger(5)].id;
+          generator.handlePlayerWidget(suggestedTrackId);
+        })
+        .catch(error => console.log(error));
+    }
   };
 }();  
