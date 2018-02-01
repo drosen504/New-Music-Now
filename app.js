@@ -98,6 +98,7 @@ function watchSubmit() {
       $('#selection-view').hide();
       $('#feedback').show();
       $('#restart-nav').show();
+      $('#song-view').show();
       handleNoFeedback();
       handleYesFeedback();
       handleRestartButton();
@@ -125,6 +126,11 @@ function handleYesFeedback() {
 function handleRestartButton() {
   $('#restart-button').click(event => {
     console.log('restarted!');
+    $('#song-view').hide();
+    $('#feedback').hide();
+    $('#artist-view').hide();
+    $('#restart-nav').hide();
+    $('#selection-view').show();
   });
 }
 
