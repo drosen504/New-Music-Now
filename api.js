@@ -45,6 +45,9 @@ const api = function() {
           generator.handlePlayerWidget(suggestedTrackId);
         })
         .catch(error => console.log(error));
+    },
+    randomInteger: function(max) {
+      return Math.floor(Math.random() * Math.floor(max));
     }
   };
 }();  
