@@ -23,7 +23,6 @@ const events = function() {
         $('#feedback').show();
         $('#restart-nav').show();
         $('#song-view').show();
-        events.handleRestartButton();
       }
     },
     handleNoFeedback: function() {
@@ -37,15 +36,13 @@ const events = function() {
       generator.postArtistInfo(relatedArtistData);
     },
     handleRestartButton: function() {
-      $('#restart-button').click(event => {
-        event.preventDefault();
-        console.log('restarted!');
-        $('#song-view').hide();
-        $('#feedback').hide();
-        $('#artist-view').hide();
-        $('#restart-nav').hide();
-        $('#selection-view').show();
-      });
+      event.preventDefault();
+      console.log('restarted!');
+      $('#song-view').hide();
+      $('#feedback').hide();
+      $('#artist-view').hide();
+      $('#restart-nav').hide();
+      $('#selection-view').show();
     },
 
   };
