@@ -21,8 +21,5 @@ const authorization = function() {
       return hash;
     },
 
-  
-
-    
   }; 
 }();

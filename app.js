@@ -13,8 +13,11 @@ let relatedArtistData;
 let artistData;
 let query;
 
-
 $(generator.initializePage);
-$(events.watchSubmit);
+// $(events.watchSubmit);
 $(events.handleSpotifyLogin);
 
+$(function() {
+  $('.js-artist-search').on('submit', events.watchSubmit);
+  $('#no-button').on('click', events.handleNoFeedback);
+});
