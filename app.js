@@ -21,5 +21,5 @@ $(function() {
   $('#js-login-button').on('click', events.handleSpotifyLogin);
   $('.js-artist-search').on('submit', events.watchSubmit);
   $('#no-button').on('click', events.handleNoFeedback);
-  // $('#yes-button').on('click', events.handleYesFeedback); 
+  $('#yes-button').on('click', events.handleYesFeedback); 
 });
