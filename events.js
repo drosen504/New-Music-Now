@@ -4,14 +4,13 @@
 const events = function() {
   return {
     handleSpotifyLogin: function() {
-      $('#js-login-button').click(event => {
-        console.log('login button clicked');
-        event.preventDefault();
-        window.location = `${authorization.authEndpoint}?client_id=${authorization.clientId}&redirect_uri=${authorization.redirectUri}&response_type=token&show_dialog=true`;
-      });
+    //   $('#js-login-button').click(event => {
+      console.log('login button clicked');
+      event.preventDefault();
+      window.location = `${authorization.authEndpoint}?client_id=${authorization.clientId}&redirect_uri=${authorization.redirectUri}&response_type=token&show_dialog=true`;
+    //   });
     },  
     watchSubmit: function() {
-    //   $('.js-artist-search').on('submit', function() {
       console.log('submit button clicked');
       event.preventDefault();
       if (!_token) {
@@ -33,10 +32,8 @@ const events = function() {
     //   });
     },
     handleNoFeedback: function() {
-    //   $('#no-button').click(event => {
       console.log(`query is currently ${query}`);
       api.initialArtistSearch(query);
-    //   });
     },
     handleYesFeedback: function() {
       $('#yes-button').click(event => {
