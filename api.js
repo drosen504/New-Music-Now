@@ -28,10 +28,11 @@ const api = function() {
     initialArtistSearch: function (name) {
       return api.getArtistDataFromApi('search', {
         q: name,
-        limit: 1,
+        limit: 3,
         type: 'artist'
       })
         .then(data => {
+          console.log(data);
           artistData = data.artists.items[0];
           console.log(artistData);
           return api.getArtistDataFromApi(`artists/${artistData.id}/related-artists`);
