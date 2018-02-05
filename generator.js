@@ -11,7 +11,10 @@ const generator = function() {
       $('#artist-view').html(`<h2>Glad you enjoyed ${relatedArtistData.name}</h2>
       <a href="${relatedArtistData.external_urls.spotify}" target="_blank">Check them out on Spotify!</a>
       <p>or</p>`);
-    }, 
+    },
+    displayArtistConfirmation: function(artistInfo) {
+      $('#confirm-view').html(``)
+    } 
   
     initializePage: function() {
       console.log('Initial View Loaded');

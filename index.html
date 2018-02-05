@@ -28,6 +28,27 @@
             </label>
         </section>
 
+        <section id="confirm-view">
+            <h3>Please confirm your artist selection:</h3>
+                <div class="artist-container">
+                    <div class="artist1">
+                        <img src='${artistInfo.artists.items[0].images[2].url}'><br>
+                        <p>${artistInfo.artists.items[0].name}</p>
+                        <p>genre: ${artistInfo.artists.items[0].genres[0]}</p>
+                    </div>
+                    <div class="artist2">
+                        <img src='${artistInfo.artists.items[1].images[2].url}'>
+                        <p>${artistInfo.artists.items[1].name}</p>
+                        <p>genre: ${artistInfo.artists.items[1].genres[0]}</p>
+                    </div>
+                    <div class="artist3">
+                        <img src='${artistInfo.artists.items[2].images[2].url}'>
+                        <p>${artistInfo.artists.items[2].name}</p>
+                        <p>genre: ${artistInfo.artists.items[2].genres[0]}</p>
+                    </div>
+                </div>
+        </section>
+        
         <section id="song-view"></section>            
         
         <form id="feedback">
