@@ -28,26 +28,7 @@
             </label>
         </section>
 
-        <section id="confirm-view">
-            <h3>Please confirm your artist selection:</h3>
-                <div class="artist-container">
-                    <div class="artist1">
-                        <img src='${artistInfo.artists.items[0].images[2].url}'><br>
-                        <p>${artistInfo.artists.items[0].name}</p>
-                        <p>genre: ${artistInfo.artists.items[0].genres[0]}</p>
-                    </div>
-                    <div class="artist2">
-                        <img src='${artistInfo.artists.items[1].images[2].url}'>
-                        <p>${artistInfo.artists.items[1].name}</p>
-                        <p>genre: ${artistInfo.artists.items[1].genres[0]}</p>
-                    </div>
-                    <div class="artist3">
-                        <img src='${artistInfo.artists.items[2].images[2].url}'>
-                        <p>${artistInfo.artists.items[2].name}</p>
-                        <p>genre: ${artistInfo.artists.items[2].genres[0]}</p>
-                    </div>
-                </div>
-        </section>
+        <section id="confirm-view"></section>
         
         <section id="song-view"></section>            
         
@@ -65,9 +46,9 @@
         
     </main>
     <script src="events.js"></script>
+    <script src="generator.js"></script>
     <script src="auth.js"></script>
     <script src="api.js"></script>
-    <script src="generator.js"></script>
     <script src="app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.2.1/qs.min.js"></script>

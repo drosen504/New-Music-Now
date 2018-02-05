@@ -13,8 +13,25 @@ const generator = function() {
       <p>or</p>`);
     },
     displayArtistConfirmation: function(artistInfo) {
-      $('#confirm-view').html(``)
-    } 
+      $('#confirm-view').html(`<h3>Please confirm your artist selection:</h3>
+      <div class="artist-container">
+          <div class="artist1">
+              <img src='${artistInfo.artists.items[0].images[2].url}'><br>
+              <p>${artistInfo.artists.items[0].name}</p>
+              <p>genre: ${artistInfo.artists.items[0].genres[0]}</p>
+          </div>
+          <div class="artist2">
+              <img src='${artistInfo.artists.items[1].images[2].url}'>
+              <p>${artistInfo.artists.items[1].name}</p>
+              <p>genre: ${artistInfo.artists.items[1].genres[0]}</p>
+          </div>
+          <div class="artist3">
+              <img src='${artistInfo.artists.items[2].images[2].url}'>
+              <p>${artistInfo.artists.items[2].name}</p>
+              <p>genre: ${artistInfo.artists.items[2].genres[0]}</p>
+          </div>
+      </div>`)
+    }, 
   
     initializePage: function() {
       console.log('Initial View Loaded');

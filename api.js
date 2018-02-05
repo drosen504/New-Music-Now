@@ -24,11 +24,24 @@ const api = function() {
         return response.json();
               
       });
+    
     },
     initialArtistSearch: function (name) {
       return api.getArtistDataFromApi('search', {
         q: name,
         limit: 3,
+        type: 'artist'
+      })
+        .then(data => {
+          console.log(data);
+          generator.displayArtistConfirmation(data);
+        })
+        .catch(error => console.log(error));
+    },
+    confirmedArtistSearch: function (name) {
+      return api.getArtistDataFromApi('search', {
+        q: name,
+        limit: 1,
         type: 'artist'
       })
         .then(data => {
@@ -49,6 +62,7 @@ const api = function() {
           generator.handlePlayerWidget(suggestedTrackId);
         })
         .catch(error => console.log(error));
+
     },
 
   };
