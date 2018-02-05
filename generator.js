@@ -30,7 +30,7 @@ const generator = function() {
               <p>${artistInfo.artists.items[2].name}</p>
               <p>genre: ${artistInfo.artists.items[2].genres[0]}</p>
           </div>
-      </div>`)
+      </div>`);
     }, 
   
     initializePage: function() {
