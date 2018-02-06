@@ -10,8 +10,9 @@ body {
 
 #page-title {
     font-size: 400%;
-    font-weight: 500;
+    font-weight: bolder;
     color: white;
+    
 }
 
 .hide-me {
@@ -43,6 +44,7 @@ body {
     outline-style: ridge;
 } 
 
-/* input[type=text] {
-    
-} */
+a {
+    color: white;
+    font-size: 30px;
+}
