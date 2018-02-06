@@ -11,8 +11,38 @@ body {
 #page-title {
     font-size: 400%;
     font-weight: 500;
+    color: white;
 }
 
 .hide-me {
     display: none;
   }
+
+  .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    border-radius: 20px;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+}
+
+#band {
+    margin-bottom: 15px;
+    border-radius: 15px;
+    height: 32px;
+    font-size: 18px;
+    text-align: center;
+}
+
+:focus {
+    outline-color: orange;
+    outline-style: ridge;
+} 
+
+/* input[type=text] {
+    
+} */
