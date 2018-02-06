@@ -1,5 +1,5 @@
 * {
-    font-family: overpass;
+    font-family: 'Overpass', sans-serif;
 }
 
 body {
@@ -10,7 +10,7 @@ body {
 
 #page-title {
     font-size: 400%;
-    font-weight: bolder;
+    font-weight: 900;
     color: white;
     
 }
@@ -37,6 +37,11 @@ body {
     height: 32px;
     font-size: 18px;
     text-align: center;
+}
+
+input::placeholder {
+    opacity: 0.75;
+    font-style: italic;
 }
 
 :focus {
