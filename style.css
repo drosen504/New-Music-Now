@@ -15,6 +15,13 @@ body {
     
 }
 
+/* for mobile devices */
+@media (max-width: 480px){
+    #page-title {
+        font-size: 200%;
+    }
+}
+
 .hide-me {
     display: none;
   }
