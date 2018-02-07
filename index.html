@@ -3,15 +3,17 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>New Music Now</title>
+    <title>New Music Now!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="w3.css">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Overpass:600,800,900" rel="stylesheet">
+    
  
 </head>
 <body class="container">
-    <h1 role="presentation" id="page-title">New Music Now!</h1>
+    <h1 role="presentation" id="page-title" class="w3-animate-opacity">New Music Now!</h1>
     <h2 id="tagline">The Quick and Easy Way to Find Something New to Listen to</h2>
     <main role="main">
 
@@ -33,12 +35,12 @@
 
         <section id="song-view"></section>            
         
-        <form id="feedback">
+        <form id="feedback" class="w3-animate-opacity">
             <p>Do you like what you've heard?</p> <!-- change to appropriate form element -->
             <button type="button" class="button" id="yes-button">Yes</button>
             <button type="button" class="button" id="no-button">Not really</button>
         </form>
-        <section id="artist-view"></section>
+        <section id="artist-view" class="w3-animate-opacity"></section>
 
         <nav id="restart-nav">
             <button type="button" class="button" id="restart-button">Start over with a new band</button>
