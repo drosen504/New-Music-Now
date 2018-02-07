@@ -8,7 +8,7 @@ const generator = function() {
       frameborder="0" allowtransparency="true"></iframe>`);
     },
     postArtistInfo: function(relatedArtistData) {
-      $('#artist-view').html(`<h2>We're glad you've enjoyed ${relatedArtistData.name}</h2>
+      $('#artist-view').html(`<h2>We're glad you've enjoyed ${relatedArtistData.name}.</h2>
       <a href="${relatedArtistData.external_urls.spotify}" target="_blank">
       <img id='artist-photo' role="link" alt="image of artist" src='${relatedArtistData.images[1].url}'><br>
       <button type="button" class="button" id="spotify-link">Check them out on Spotify!</button>
