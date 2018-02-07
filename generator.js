@@ -14,6 +14,9 @@ const generator = function() {
       <button type="button" class="button" id="spotify-link">Check them out on Spotify!</button>
       </a>
       <p>-or-</p>`);
+    },
+    noArtistFound: function() {
+      console.log('No artist found');
     }, 
   
     initializePage: function() {
