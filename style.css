@@ -35,7 +35,7 @@ a {
         background-position: center;
         background-repeat: no-repeat; */
     }
-    .container { margin: 20px; }
+    .body { margin: 20px; }
     #page-title { font-size: 200%; }
     #tagline { font-size: 100%; }
     #landing-view h3 { font-size: 100%; }
