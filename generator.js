@@ -11,7 +11,7 @@ const generator = function() {
       $('#artist-view').html(`<h2>We're glad you've enjoyed ${relatedArtistData.name}</h2>
       <a href="${relatedArtistData.external_urls.spotify}" target="_blank">
       <img id='artist-photo' role="link" alt="image of artist" src='${relatedArtistData.images[1].url}'><br>
-      Check them out on Spotify!
+      <button type="button" class="button" id="spotify-link">Check them out on Spotify!</button>
       </a>
       <p>-or-</p>`);
     }, 

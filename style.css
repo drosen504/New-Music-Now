@@ -22,6 +22,11 @@ body {
     }
 }
 
+#landing-view h3 {
+    color: red;
+    font-style: italic;
+}
+
 .hide-me {
     display: none;
   }
@@ -38,6 +43,24 @@ body {
     font-size: 20px;
 }
 
+#play-widget {
+    /* margin-top: 3%;
+    margin-bottom: -20px; */
+    height: 75px;
+}
+
+#yes-button {
+    margin-right: 15px;
+}
+
+#no-button {
+    margin-left: 15px;
+}
+
+#restart-button {
+    margin-top: 20px;
+}
+
 #band {
     margin-bottom: 15px;
     border-radius: 15px;
@@ -50,13 +73,24 @@ input::placeholder {
     opacity: 0.75;
     font-style: italic;
 }
+#feedback p {
+    font-size: 25px;
+}
 
 :focus {
     outline-color: orange;
     outline-style: ridge;
 } 
 
+/* #restart-nav hr {
+    max-width: 75%;
+} */
+
 a {
     color: white;
     font-size: 30px;
+}
+
+#artist-view p {
+    font-size: 20px;
 }
