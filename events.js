@@ -29,6 +29,7 @@ const events = function() {
     handleNoArtistFound: function() {
       console.log('No artist found');
       generator.noArtistFoundMessage();
+      $('#error-view').show();
       $('#feedback').hide();
       $('#restart-nav').show();
       $('#song-view').hide();
@@ -46,6 +47,7 @@ const events = function() {
     handleRestartButton: function() {
       event.preventDefault();
       console.log('restarted!');
+      artistData = undefined;
       $('#song-view').hide();
       $('#feedback').hide();
       $('#artist-view').hide();
