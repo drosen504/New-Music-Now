@@ -33,13 +33,13 @@ const api = function() {
       })
         .then(data => {
           console.log(data);
-          // if (data.artists.items.length = 0) {
-          //   generator.noArtistFound();
-          // } else {
           artistData = data.artists.items[0];
           console.log(artistData);
-          return api.getArtistDataFromApi(`artists/${artistData.id}/related-artists`);
-          // }
+          if (artistData === undefined) {
+            events.handleNoArtistFound();
+          } else {
+            return api.getArtistDataFromApi(`artists/${artistData.id}/related-artists`);
+          }
         }) 
         .then(data => {
           let randomArtistIndexNumber = this.randomInteger(10);

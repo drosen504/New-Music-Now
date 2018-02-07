@@ -15,10 +15,9 @@ const generator = function() {
       </a>
       <p>-or-</p>`);
     },
-    noArtistFound: function() {
-      console.log('No artist found');
-    }, 
-  
+    noArtistFoundMessage: function() {
+      $('#error-view').html('<h2>Unable to find artist. Please click below to restart</h2>');      
+    },  
     initializePage: function() {
       console.log('Initial View Loaded');
       if (!_token) {

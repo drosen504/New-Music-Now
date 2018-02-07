@@ -18,12 +18,20 @@ const events = function() {
         query = queryBand.val();
         console.log(`You searched for ${query}`);  
         queryBand.val('');
-        api.initialArtistSearch(query);
         $('#selection-view').hide();
         $('#feedback').show();
         $('#restart-nav').show();
         $('#song-view').show();
+        api.initialArtistSearch(query); 
+
       }
+    },
+    handleNoArtistFound: function() {
+      console.log('No artist found');
+      generator.noArtistFoundMessage();
+      $('#feedback').hide();
+      $('#restart-nav').show();
+      $('#song-view').hide();
     },
     handleNoFeedback: function() {
       console.log(`query is currently ${query}`);
@@ -42,6 +50,7 @@ const events = function() {
       $('#feedback').hide();
       $('#artist-view').hide();
       $('#restart-nav').hide();
+      $('#error-view').hide();
       $('#selection-view').show();
     },
 

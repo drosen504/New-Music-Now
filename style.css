@@ -42,7 +42,12 @@ a {
     #feedback p {font-size: 100%; }
 }
 
-#landing-view h3 {
+/* #error-view {
+    color: red;
+    font-style: italic;
+} */
+
+#landing-view h3, #error-view {
     color: red;
     font-style: italic;
 }
