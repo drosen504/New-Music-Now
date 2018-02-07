@@ -8,6 +8,12 @@ body {
     text-align: center;
 }
 
+
+:focus {
+    outline-color: orange;
+    outline-style: ridge;
+} 
+
 #page-title {
     font-size: 400%;
     font-weight: 900;
@@ -15,11 +21,6 @@ body {
     text-decoration: underline;
     margin-bottom: -20px;
 }
-
-:focus {
-    outline-color: orange;
-    outline-style: ridge;
-} 
 
 a {
     color: white;
@@ -42,11 +43,6 @@ a {
     #feedback p {font-size: 100%; }
 }
 
-/* #error-view {
-    color: red;
-    font-style: italic;
-} */
-
 #landing-view h3, #error-view {
     color: red;
     font-style: italic;
@@ -54,7 +50,7 @@ a {
 
 #selection-view h2 {
     color: white;
-    margin-top: 150px;
+    margin-top: 50px;
     font-size: 250%;
 }
 
