@@ -39,28 +39,15 @@ body {
     margin-top: 10px;
 }
 
+#selection-view h2 {
+    color: white;
+    margin-top: 50px;
+    font-size: 250%;
+}
+
 a {
     color: white;
     font-size: 30px;
-}
-
-/* for mobile devices */
-@media (max-width: 480px){
-    body {
-        background-image: url("music-background-mobile.jpg");
-        /* background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat; */
-    }
-    .body { margin: 20px; }
-    #title-container { max-width: 100%; }
-    #page-title { font-size: 200%;}
-    #tagline { font-size: 100%; padding-top: 20px;}
-    #landing-view h3 { font-size: 100%; }
-    #selection-view h2 {font-size: 50%; }
-    #artist-view h2 {font-size: 100%; }
-    #feedback p {font-size: 100%; }
-    #artist-photo {max-height: 50%; max-width: 50%;}
 }
 
 #landing-view h3, #error-view {
@@ -68,15 +55,9 @@ a {
     font-style: italic;
 }
 
-#selection-view h2 {
-    color: white;
-    margin-top: 50px;
-    font-size: 250%;
-}
-
 .hide-me {
     display: none;
-  }
+}
 
   .button {
     background-color: #1db954; /* Green */
@@ -136,4 +117,23 @@ input::placeholder {
 #artist-photo {
     max-width: 75%;
     max-height: 75%;
+}
+
+/* for mobile devices */
+@media (max-width: 480px){
+    body {
+        background-image: url("music-background-mobile.jpg");
+        /* background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat; */
+    }
+    .body { margin: 20px; }
+    #title-container { max-width: 100%; }
+    #page-title { font-size: 200%;}
+    #tagline { font-size: 100%; padding-top: 20px;}
+    #landing-view h3 { font-size: 100%; }
+    #selection-view h2 { font-size: 100%; }
+    #artist-view h2 { font-size: 100%; }
+    #feedback p { font-size: 100%; }
+    #artist-photo { max-height: 50%; max-width: 50%;}
 }
