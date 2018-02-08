@@ -17,7 +17,7 @@
         <h1 role="heading" id="page-title" class="w3-animate-opacity">New Music Now!</h1>
         <h2 id="tagline">The Quick and Easy Way to Find Something New to Listen to</h2>
     </section>
-    <main role="main">
+    <main role="main" aria-live="assertive">
 
         <section id="error-view"></section>
 
@@ -28,8 +28,8 @@
 
         <section id="selection-view">
             <h2>Name a band/artist that you like:</h2>
-            <label for="band"><form action="#" class="js-artist-search">
-                    <input type="text" id="band" class="js-query" placeholder="ex: Beyonce" required><br> 
+            <label for="band-name"><form action="#" class="js-artist-search">
+                    <input type="text" id="band-name" class="js-query" placeholder="ex: Beyonce" required><br> 
                     <button class="button" type="submit">New Music Please!</button>
                   </form>
             </label>
@@ -38,7 +38,7 @@
         <section id="song-view"></section>            
         
         <form id="feedback" class="w3-animate-opacity">
-            <p>Do you like what you've heard?</p> <!-- change to appropriate form element -->
+            <p class="w3-animate-opacity">Do you like what you've heard?</p>
             <button type="button" class="button" value="yes" id="yes-button">Yes</button>
             <button type="button" class="button" value="no" id="no-button">Not really</button>
         </form>

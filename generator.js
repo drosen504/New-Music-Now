@@ -4,10 +4,10 @@
 const generator = function() {
   return {
     handlePlayerWidget: function(trackId) {
-      $('#song-view').html(`<p>Click the play button and check this out!</p><br>
-      <iframe id="play-widget" src="https://open.spotify.com/embed?uri=spotify:track:${trackId}"
+      $('#song-view').html(`<p class="w3-animate-opacity">Click the play button and check this out!</p><br>
+      <iframe id="play-widget" role="region" aria-label="audio player" src="https://open.spotify.com/embed?uri=spotify:track:${trackId}"
       frameborder="0" allowtransparency="true"></iframe>`);
-    },
+    },  
     postArtistInfo: function(relatedArtistData) {
       $('#artist-view').html(`<h2 class="w3-animate-left">We're glad you've enjoyed ${relatedArtistData.name}.</h2>
       <a href="${relatedArtistData.external_urls.spotify}" target="_blank">
