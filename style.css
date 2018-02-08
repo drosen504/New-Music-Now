@@ -71,8 +71,12 @@ a {
     font-size: 18px;
 }
 
+#song-view p {
+    font-size: 18px;
+}
+
 #play-widget {
-    margin-top: 20px;
+    margin-top: -15px;
     height: 75px;
 }
 
