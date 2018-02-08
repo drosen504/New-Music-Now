@@ -121,12 +121,7 @@ input::placeholder {
 
 /* for mobile devices */
 @media (max-width: 480px){
-    body {
-        background-image: url("music-background-mobile.jpg");
-        /* background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat; */
-    }
+    body { background-image: url("music-background-mobile.jpg"); }
     .body { margin: 20px; }
     #title-container { max-width: 100%; }
     #page-title { font-size: 200%;}
