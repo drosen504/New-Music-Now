@@ -6,7 +6,6 @@ window.location.hash = '';
  
 // Set token. grab from URI hash
 let _token = hash.access_token;
-console.log(`token is ${_token}`);
 
 let relatedArtistId;
 let relatedArtistData;

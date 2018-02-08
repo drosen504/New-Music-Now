@@ -4,12 +4,10 @@
 const events = function() {
   return {
     handleSpotifyLogin: function() {
-      console.log('login button clicked');
       event.preventDefault();
       window.location = `${authorization.authEndpoint}?client_id=${authorization.clientId}&redirect_uri=${authorization.redirectUri}&response_type=token&show_dialog=true`;
     },  
     watchSubmit: function() {
-      console.log('submit button clicked');
       event.preventDefault();
       if (!_token) {
         window.location = `${authorization.authEndpoint}?client_id=${authorization.clientId}&redirect_uri=${authorization.redirectUri}&response_type=token&show_dialog=true`;
@@ -27,7 +25,6 @@ const events = function() {
       }
     },
     handleNoArtistFound: function() {
-      console.log('No artist found');
       generator.noArtistFoundMessage();
       $('#error-view').show();
       $('#feedback').hide();
@@ -39,14 +36,12 @@ const events = function() {
       api.initialArtistSearch(query);
     },
     handleYesFeedback: function() {
-      console.log(relatedArtistId);
       $('#artist-view').show();
       $('#feedback').hide();
       generator.postArtistInfo(relatedArtistData);
     },
     handleRestartButton: function() {
       event.preventDefault();
-      console.log('restarted!');
       artistData = undefined;
       $('#song-view').hide();
       $('#feedback').hide();

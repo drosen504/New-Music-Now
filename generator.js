@@ -22,7 +22,6 @@ const generator = function() {
       <p>We're unable to find that artist. Please click below to start over!</p>`);      
     },  
     initializePage: function() {  
-      console.log('Initial View Loaded');
       if (!_token) {
         $('#selection-view').hide();
         $('#song-view').hide();

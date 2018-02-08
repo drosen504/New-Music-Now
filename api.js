@@ -8,7 +8,6 @@ const api = function() {
     },  
     getArtistDataFromApi: function (endpoint, query = {}) {
       const url = new URL(`https://api.spotify.com/v1/${endpoint}`);
-      console.log(`base API call URL is ${url}`);
       const headers = new Headers();
       headers.set('Authorization', `Bearer ${_token}`);
       headers.set('Content-Type', 'application/json');
@@ -32,7 +31,6 @@ const api = function() {
         type: 'artist'
       })
         .then(data => {
-          console.log(data);
           artistData = data.artists.items[0];
           console.log(artistData);
           if (artistData === undefined) {
