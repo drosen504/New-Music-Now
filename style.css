@@ -4,7 +4,8 @@
 }
 
 body {
-    background: url("http://www.kimberly-caldwell.com/wp-content/themes/kimberly-caldwell/images/home-music-background.jpg") repeat;
+    background-color: #224B4D;
+    /* background: url("http://www.kimberly-caldwell.com/wp-content/themes/kimberly-caldwell/images/home-music-background.jpg") repeat; */
     color: rgb(246, 255, 121);
     text-align: center;
 }
@@ -51,7 +52,7 @@ a {
 }
 
 #landing-view h3, #error-view {
-    color: red;
+    color: rgb(238, 180, 180);
     font-style: italic;
 }
 
@@ -94,7 +95,7 @@ a {
 }
 
 #band-name {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     border-radius: 15px;
     height: 32px;
     font-size: 18px;
