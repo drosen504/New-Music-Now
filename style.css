@@ -17,7 +17,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-top: 25px;
-    vertical-align: middle;
+    
     /* padding-top: 5px; */
     /* padding-bottom: 5px; */
 }
@@ -36,7 +36,7 @@ body {
     font-weight: 900;
     color: white;
     text-decoration: underline;
-    /* margin-bottom: -20px; */
+    margin-top: 10px;
 }
 
 a {
@@ -53,10 +53,11 @@ a {
         background-repeat: no-repeat; */
     }
     .body { margin: 20px; }
-    #page-title { font-size: 200%; }
-    #tagline { font-size: 100%; }
+    #title-container { max-width: 100%; }
+    #page-title { font-size: 200%;}
+    #tagline { font-size: 100%; padding-top: 20px;}
     #landing-view h3 { font-size: 100%; }
-    #selection-view h2 {font-size: 100%; }
+    #selection-view h2 {font-size: 50%; }
     #artist-view h2 {font-size: 100%; }
     #feedback p {font-size: 100%; }
     #artist-photo {max-height: 50%; max-width: 50%;}
