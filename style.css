@@ -48,8 +48,11 @@ a {
     font-size: 30px;
 }
 
-#landing-view p {
-    
+#intro {
+    color: white;
+    max-width: 75%;
+    display: inline-block;
+    margin-top: 20px;
 }
 
 #landing-view h3, #error-view {
