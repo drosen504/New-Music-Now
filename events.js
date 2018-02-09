@@ -3,7 +3,7 @@
 
 const events = function() {
   return {
-    handleSpotifyLogin: function() {
+    handleSpotifyLogin: function(event) {
       event.preventDefault();
       window.location = `${authorization.authEndpoint}?client_id=${authorization.clientId}&redirect_uri=${authorization.redirectUri}&response_type=token&show_dialog=true`;
     },  
@@ -40,7 +40,7 @@ const events = function() {
       $('#feedback').attr('aria-hidden', 'true').hide();
       generator.postArtistInfo(relatedArtistData);
     },
-    handleRestartButton: function() {
+    handleRestartButton: function(event) {
       event.preventDefault();
       artistData = undefined;
       $('#song-view').attr('aria-hidden', 'true').hide();
