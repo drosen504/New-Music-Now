@@ -7,7 +7,7 @@ const events = function() {
       event.preventDefault();
       window.location = `${authorization.authEndpoint}?client_id=${authorization.clientId}&redirect_uri=${authorization.redirectUri}&response_type=token&show_dialog=true`;
     },  
-    watchSubmit: function() {
+    watchSubmit: function(event) {
       event.preventDefault();
       if (!_token) {
         window.location = `${authorization.authEndpoint}?client_id=${authorization.clientId}&redirect_uri=${authorization.redirectUri}&response_type=token&show_dialog=true`;
