@@ -28,38 +28,4 @@ A Spotify account is required to utilize New Music Now! (either free or premium 
 * Javascript
 * jQuery
 
-**Screenshots:**
-
-Mobile View Login Screen:
-
-![mobile-login]( "Mobile View Login Screen")
-
-
-Mobile Artist Select Screen:
-
-![mobile-artist-select]( "Mobile Artist Select Screen")
-
-
-Mobile Player Screen:
-
-![mobile-player]( "Mobile Player Screen")
-
-
-Moile Artist Page Screen:
-
-![mobile-artist-page]("Moile Artist Page Screen")
-
-
-Desktop View Login Screen:
-
-![desktop-login]( "Desktop View Login Screen")
-
-
-Desktop Artist Select Screen: ![desktop-artist-select]( "Desktop Artist Select Screen")
-
-
-Desktop Player Screen: ![desktop-player]( "Desktop Player Screen")
-
-
-Desktop Artist Page Screen: ![desktop-artist-page]( "Desktop Artist Page Screen")
-
+For more information about Spotify's Play Button Widget: https://developer.spotify.com/technologies/widgets/spotify-play-button/ 
