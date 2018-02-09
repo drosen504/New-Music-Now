@@ -1,7 +1,29 @@
-# spotify-nmn-v2
-New Music Now!
-The Quick and Easy Way to Find Something New to Listen to
-Site: https://drosen504.github.io/New-Music-Now/
+# New Music Now!
+*The Quick and Easy Way to Find Something New to Listen to*
+
+Live Website: https://drosen504.github.io/New-Music-Now/
+
+
+**Spotify Credentials (if you don't have your own account):**
+
+Email: the.defenestrastor@gmail.com
+
+Password: NewMusicNow
+
+**Summary:**
+
+The purpose of this app is to, with minimal user input, recommend a new band that you might enjoy. ["Overchoice"](https://en.wikipedia.org/wiki/Overchoice) can occur when too many options are provided at once, like having 8 brands of peanut butter at the grocery store or 40 different online full stack programming courses to choose from. The "Related Artists" section of music services like Spotify or last.fm are another example of this. You want something new to listen to, but deciding which band to delve into can be daunting. New Music Now! is here to help.
+
+
+**Workflow**
+
+A Spotify account is required to utilize New Music Now (either free or premium is fine). If you do not have a Spotify Account, I've provided credentials for you to use above. The user is first promoted to login to Spotify. After doing so they are prompted to enter the name of a band/artist that they like. They will then be presented with a single song from a related artist and asked to listen to it by hitting the play button. They are then asked if they like it or don't like it. If they do, a link to the artist's Spotify page is presented. If not, a new song/artist related to their query will populate for them to listen to. They also have the option of starting over and entering a new artist.
+
+
+
+
+
+
 
 Screenshots:
 
