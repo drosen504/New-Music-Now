@@ -25,7 +25,6 @@ A Spotify account is required to utilize New Music Now! (either free or premium 
 * CSS (including W3.CSS framework)
 * Javascript
 * jQuery
-* OAuth
 
 **Screenshots:**
 
