@@ -5,8 +5,8 @@ const authorization = function() {
   return {
     authEndpoint: 'https://accounts.spotify.com/authorize',
     clientId: '5f795f8bb8c14d94bafa6dcd2ed3038b',
-    redirectUri: 'https://drosen504.github.io/New-Music-Now/index',
-    // 'http://localhost:8888/index',
+    redirectUri: 'http://localhost:8888/index',
+    //  'https://drosen504.github.io/New-Music-Now/index',
     scope: 'user-modify-playback-state',
     decodeURL: function() {  
       const hash = window.location.hash

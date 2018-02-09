@@ -48,6 +48,10 @@ a {
     font-size: 30px;
 }
 
+#landing-view p {
+    
+}
+
 #landing-view h3, #error-view {
     color: rgb(238, 180, 180);
     font-style: italic;
