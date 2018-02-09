@@ -10,6 +10,14 @@ body {
     text-align: center;
 }
 
+#page-title {
+    font-size: 400%;
+    font-weight: 900;
+    color: white;
+    text-decoration: underline;
+    margin-top: 10px;
+}
+
 #title-container {
     border: 3px white;
     border-style: dashed solid;
@@ -29,14 +37,6 @@ body {
     outline-style: ridge;
 } 
 
-#page-title {
-    font-size: 400%;
-    font-weight: 900;
-    color: white;
-    text-decoration: underline;
-    margin-top: 10px;
-}
-
 #selection-view h2 {
     color: white;
     margin-top: 50px;
@@ -50,7 +50,7 @@ a {
 
 #intro {
     color: white;
-    max-width: 75%;
+    max-width: 50%;
     display: inline-block;
     margin-top: 20px;
 }
@@ -58,6 +58,19 @@ a {
 #landing-view h3, #error-view {
     color: rgb(238, 180, 180);
     font-style: italic;
+}
+
+ul {
+    list-style-type: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+span {
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+    
 }
 
 .hide-me {
@@ -140,6 +153,7 @@ input::placeholder {
     #page-title { font-size: 200%;}
     #tagline { font-size: 100%; padding-top: 20px;}
     #landing-view h3 { font-size: 100%; }
+    #intro { max-width: 75%; }
     #selection-view h2 { font-size: 150%; margin-top: 20px;}
     #artist-view h2 { font-size: 100%; }
     #feedback p { font-size: 100%; }
