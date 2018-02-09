@@ -23,16 +23,16 @@ const generator = function() {
     },  
     initializePage: function() {  
       if (!_token) {
-        $('#selection-view').hide();
-        $('#song-view').hide();
-        $('#feedback').hide();
-        $('#artist-view').hide();
-        $('#restart-nav').hide();
+        $('#selection-view').attr('aria-hidden', 'true').hide();
+        $('#song-view').attr('aria-hidden', 'true').hide();
+        $('#feedback').attr('aria-hidden', 'true').hide();
+        $('#artist-view').attr('aria-hidden', 'true').hide();
+        $('#restart-nav').attr('aria-hidden', 'true').hide();
       } else {
-        $('#landing-view').hide();
-        $('#feedback').hide();
-        $('#artist-view').hide();
-        $('#restart-nav').hide();
+        $('#landing-view').attr('aria-hidden', 'true').hide();
+        $('#feedback').attr('aria-hidden', 'true').hide();
+        $('#artist-view').attr('aria-hidden', 'true').hide();
+        $('#restart-nav').attr('aria-hidden', 'true').hide();
       }
     }
 

@@ -16,39 +16,39 @@ const events = function() {
         query = queryBand.val();
         console.log(`You searched for ${query}`);  
         queryBand.val('');
-        $('#selection-view').hide();
-        $('#feedback').show();
-        $('#restart-nav').show();
-        $('#song-view').show();
+        $('#selection-view').attr('aria-hidden', 'true').hide();
+        $('#feedback').attr('aria-hidden', 'false').show();
+        $('#restart-nav').attr('aria-hidden', 'false').show();
+        $('#song-view').attr('aria-hidden', 'false').show();
         api.initialArtistSearch(query); 
 
       }
     },
     handleNoArtistFound: function() {
       generator.noArtistFoundMessage();
-      $('#error-view').show();
-      $('#feedback').hide();
-      $('#restart-nav').show();
-      $('#song-view').hide();
+      $('#error-view').attr('aria-hidden', 'false').show();
+      $('#feedback').attr('aria-hidden', 'true').hide();
+      $('#restart-nav').attr('aria-hidden', 'false').show();
+      $('#song-view').attr('aria-hidden', 'true').hide();
     },
     handleNoFeedback: function() {
       console.log(`query is currently ${query}`);
       api.initialArtistSearch(query);
     },
     handleYesFeedback: function() {
-      $('#artist-view').show();
-      $('#feedback').hide();
+      $('#artist-view').attr('aria-hidden', 'false').show();
+      $('#feedback').attr('aria-hidden', 'true').hide();
       generator.postArtistInfo(relatedArtistData);
     },
     handleRestartButton: function() {
       event.preventDefault();
       artistData = undefined;
-      $('#song-view').hide();
-      $('#feedback').hide();
-      $('#artist-view').hide();
-      $('#restart-nav').hide();
-      $('#error-view').hide();
-      $('#selection-view').show();
+      $('#song-view').attr('aria-hidden', 'true').hide();
+      $('#feedback').attr('aria-hidden', 'true').hide();
+      $('#artist-view').attr('aria-hidden', 'true').hide();
+      $('#restart-nav').attr('aria-hidden', 'true').hide();
+      $('#error-view').attr('aria-hidden', 'true').hide();
+      $('#selection-view').attr('aria-hidden', 'false').show();
     },
 
   };
