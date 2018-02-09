@@ -66,11 +66,10 @@ ul {
     margin-right: auto;
 }
 
-span {
+#login-credentials span {
     color: white;
     font-weight: bold;
     text-decoration: underline;
-    
 }
 
 .hide-me {
@@ -91,7 +90,12 @@ span {
     border: .5px white solid;
 }
 
-#song-view p {
+#desktop-app-warning {
+    font-size: 14px;
+    font-style: italic;
+}
+
+#play-instructions {
     font-size: 18px;
 }
 
@@ -158,4 +162,5 @@ input::placeholder {
     #artist-view h2 { font-size: 100%; }
     #feedback p { font-size: 100%; }
     #artist-photo { max-height: 50%; max-width: 50%;}
+    #desktop-app-warning { display: none; }
 }

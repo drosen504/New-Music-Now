@@ -4,7 +4,8 @@
 const generator = function() {
   return {
     handlePlayerWidget: function(trackId) {
-      $('#song-view').html(`<p class="w3-animate-opacity">Click the play button and check this out!</p><br>
+      $('#song-view').html(`<p id="play-instructions" class="w3-animate-opacity">Click the play button and check this out!</p>
+      <p id="desktop-app-warning">(player may take a moment to load if you do not have the Spotify desktop app installed)</p><br>
       <iframe id="play-widget" role="region" aria-label="audio player" src="https://open.spotify.com/embed?uri=spotify:track:${trackId}"
       frameborder="0" allowtransparency="true"></iframe>`);
     },  
